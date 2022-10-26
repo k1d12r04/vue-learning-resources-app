@@ -64,8 +64,12 @@ export default {
       ) {
         this.inputIsInvalid = true;
         return;
+      } else {
+        this.addResource(enteredTitle, enteredDescription, enteredUrl);
+        this.$refs.titleInput.value = '';
+        this.$refs.descInput.value = '';
+        this.$refs.linkInput.value = '';
       }
-      this.addResource(enteredTitle, enteredDescription, enteredUrl);
     },
     confirmError() {
       this.inputIsInvalid = false;
